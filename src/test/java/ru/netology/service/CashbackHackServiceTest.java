@@ -8,21 +8,21 @@ import static org.junit.jupiter.api.Assertions.*;
 class CashbackHackServiceTest {
 
     @Test
-    @DisplayName("РЎСѓРјРјР° РїРѕРєСѓРїРѕРє РЅРѕР»СЊ: РІС‹Р±СЂРѕСЃРёС‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ")
+    @DisplayName("Сумма покупок ноль: выбросить исключение")
     void shouldReturn1000IfAmountIs0() {
 
-        /* РЎРѕР·РґР°РµРј СЃРµСЂРІРёСЃ Рё РїРµСЂРµРґР°РµРј РІ РЅРµРіРѕ СЃСѓРјРјСѓ 0
-        РћР : IllegalArgumentException*/
+        /* Создаем сервис и передаем в него сумму 0
+        ОР: IllegalArgumentException*/
         CashbackHackService service = new CashbackHackService();
         assertThrows(IllegalArgumentException.class, () -> service.remain(0));
     }
 
     @Test
-    @DisplayName("РЎСѓРјРјР° РїРѕРєСѓРїРѕРє 1000: РІРµСЂРЅСѓС‚СЊ 0")
+    @DisplayName("Сумма покупок 1000: вернуть 0")
     void shouldReturn0IfAmountIs1000() {
 
-        /* РЎРѕР·РґР°РµРј СЃРµСЂРІРёСЃ Рё РїРµСЂРµРґР°РµРј РІ РЅРµРіРѕ СЃСѓРјРјСѓ 1000
-        РћР : 0 СЂСѓР±Р»РµР№ */
+        /* Создаем сервис и передаем в него сумму 1000
+        ОР: 0 рублей */
 
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(1000);
@@ -32,11 +32,11 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    @DisplayName("РЎСѓРјРјР° РїРѕРєСѓРїРѕРє 400: РІРµСЂРЅСѓС‚СЊ 600")
+    @DisplayName("Сумма покупок 400: вернуть 600")
     void shouldReturn600IfAmountIs400() {
 
-        /* РЎРѕР·РґР°РµРј СЃРµСЂРІРёСЃ Рё РїРµСЂРµРґР°РµРј РІ РЅРµРіРѕ СЃСѓРјРјСѓ 400
-        РћР : 600 СЂСѓР±Р»РµР№ */
+        /* Создаем сервис и передаем в него сумму 400
+        ОР: 600 рублей */
 
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(400);
@@ -46,11 +46,11 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    @DisplayName("РЎСѓРјРјР° РїРѕРєСѓРїРѕРє 1900: РІРµСЂРЅСѓС‚СЊ 100")
+    @DisplayName("Сумма покупок 1900: вернуть 100")
     void shouldReturn100IfAmountIs1900() {
 
-        /* РЎРѕР·РґР°РµРј СЃРµСЂРІРёСЃ Рё РїРµСЂРµРґР°РµРј РІ РЅРµРіРѕ СЃСѓРјРјСѓ 1900
-        РћР : 100 СЂСѓР±Р»РµР№ */
+        /* Создаем сервис и передаем в него сумму 1900
+        ОР: 100 рублей */
 
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(1900);
