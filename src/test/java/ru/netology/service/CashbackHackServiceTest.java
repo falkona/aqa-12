@@ -2,6 +2,7 @@ package ru.netology.service;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.params.provider.CsvFileSource;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -57,5 +58,18 @@ class CashbackHackServiceTest {
         int expected = 100;
 
         assertEquals(expected, actual);
+    }
+
+    @Test
+    @DisplayName("Тест с параметрами")
+    @CsvFileSource(resources = "/resource.csv", delimiter = ';')
+    void parametrizedTest (int actual, int expected) {
+
+        CashbackHackService service = new CashbackHackService();
+        //actual = service.remain(1900);
+        //int expected = 100;
+
+        assertEquals(expected, actual);
+
     }
 }
