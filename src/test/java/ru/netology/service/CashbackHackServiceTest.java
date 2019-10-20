@@ -10,21 +10,21 @@ import static org.junit.jupiter.api.Assertions.*;
 class CashbackHackServiceTest {
 
     @Test
-    @DisplayName("Сумма покупок 0: выбросить исключение")
+    @DisplayName("РЎСѓРјРјР° 0: РІС‹Р±СЂРѕСЃРёС‚СЊ РёСЃРєР»СЋС‡РµРЅРёРµ")
     void shouldReturn1000IfAmountIs0() {
 
-        /* Создаем сервис и передаем в него сумму 0
-        ОР: IllegalArgumentException*/
+        /* ??????? ?????? ? ???????? ? ???? ????? 0
+        ??: IllegalArgumentException*/
         CashbackHackService service = new CashbackHackService();
         assertThrows(IllegalArgumentException.class, () -> service.remain(0));
     }
 
     @Test
-    @DisplayName("Сумма покупок 1000: вернуть 0")
+    @DisplayName("????? ??????? 1000: ??????? 0")
     void shouldReturn0IfAmountIs1000() {
 
-        /* Создаем сервис и передаем в него сумму 1000
-        ОР: 0 рублей */
+        /* ??????? ?????? ? ???????? ? ???? ????? 1000
+        ??: 0 ?????? */
 
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(1000);
@@ -34,11 +34,11 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    @DisplayName("Сумма покупок 400: вернуть 600")
+    @DisplayName("????? ??????? 400: ??????? 600")
     void shouldReturn600IfAmountIs400() {
 
-        /* Создаем сервис и передаем в него сумму 400
-        ОР: 600 рублей */
+        /* ??????? ?????? ? ???????? ? ???? ????? 400
+        ??: 600 ?????? */
 
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(400);
@@ -48,11 +48,11 @@ class CashbackHackServiceTest {
     }
 
     @Test
-    @DisplayName("Сумма покупок 1900: вернуть 100")
+    @DisplayName("????? ??????? 1900: ??????? 100")
     void shouldReturn100IfAmountIs1900() {
 
-        /* Создаем сервис и передаем в него сумму 1900
-        ОР: 100 рублей */
+        /* ??????? ?????? ? ???????? ? ???? ????? 1900
+        ??: 100 ?????? */
 
         CashbackHackService service = new CashbackHackService();
         int actual = service.remain(1900);
@@ -62,7 +62,7 @@ class CashbackHackServiceTest {
     }
 
     @ParameterizedTest
-    @DisplayName("Тест с параметрами")
+    @DisplayName("???? ? ???????????")
     @CsvFileSource(resources = "/differentValues.csv", numLinesToSkip = 1)
     void parametrizedTest (int amount, int expected) {
 
