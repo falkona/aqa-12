@@ -62,7 +62,7 @@ class CashbackHackServiceTest {
 
     @Test
     @DisplayName("Тест с параметрами")
-    @CsvFileSource(resources = "/resource.csv", delimiter = ';')
+    @CsvFileSource(resources = "/resource.csv", numLinesToSkip = 1)
     void parametrizedTest (int actual, int expected) {
 
         CashbackHackService service = new CashbackHackService();
