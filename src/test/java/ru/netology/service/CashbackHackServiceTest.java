@@ -8,7 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CashbackHackServiceTest {
 
     @Test
-    @DisplayName("Сумма покупок ноль: выбросить исключение")
+    @DisplayName("Сумма покупок 0: выбросить исключение")
     void shouldReturn1000IfAmountIs0() {
 
         /* Создаем сервис и передаем в него сумму 0
